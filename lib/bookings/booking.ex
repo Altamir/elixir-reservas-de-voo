@@ -3,7 +3,16 @@ defmodule Flightex.Bookings.Booking do
   @enforce_keys @keys
   defstruct @keys
 
-  def build do
-    # TO DO
+  def build(complete_date, local_origin, local_destination, user_id) do
+    uuid = UUID.uuid4()
+
+    {:ok,
+     %__MODULE__{
+       complete_date: complete_date,
+       id: uuid,
+       local_destination: local_destination,
+       local_origin: local_origin,
+       user_id: user_id
+     }}
   end
 end
