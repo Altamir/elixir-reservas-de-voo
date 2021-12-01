@@ -15,7 +15,7 @@ defmodule Flightex.Bookings.CreateOrUpdateTest do
         complete_date: ~N[2001-05-07 03:05:00],
         local_origin: "Brasilia",
         local_destination: "Bananeiras",
-        user_id: "e9f7d281-b9f2-467f-9b34-1b284ed58f9e",
+        user_id: "e9f7d281-b9f2-467f-9b34-1b284ed58f9e"
       }
 
       {:ok, uuid} = CreateOrUpdate.call(params)
@@ -31,6 +31,18 @@ defmodule Flightex.Bookings.CreateOrUpdateTest do
       }
 
       assert response == expected_response
+    end
+
+    test "when a error on create booking, return error" do
+      params = %{
+        complete_date: ~U[2021-11-11 00:00:01Z],
+        local_origin: "Brasilia",
+        local_destination: "Bananeiras",
+        user_id: "e9f7d281-b9f2-467f-9b34-1b284ed58f9e"
+      }
+
+      {:error, msg} = CreateOrUpdate.call(params)
+      assert {:error, "Complete date should a Naive Datetime"} == {:error, msg}
     end
   end
 end
