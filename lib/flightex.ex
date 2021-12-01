@@ -9,4 +9,7 @@ defmodule Flightex do
     BookinAgent.start_link(%{})
   end
 
+  def create_or_update_booking(params) do
+    CreateOrUpdateBooking.call(params)
+  end
 end
