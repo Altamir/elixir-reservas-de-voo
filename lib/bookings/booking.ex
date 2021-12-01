@@ -17,6 +17,6 @@ defmodule Flightex.Bookings.Booking do
   end
 
   def build(_complete_date, _local_origin, _local_destination, _user_id) do
-    {:error, "Complete date shoul a Naive Datetime"}
+    {:error, "Complete date should a Naive Datetime"}
   end
 end
