@@ -36,7 +36,7 @@ Nesse desafio, você deverá criar uma aplicação de reserva de voos, onde have
 
 
 - Testes com o objetivo de completar 100% na cobertura excoveralls.
-	- Integração com  [Coveralls.io](https://coveralls.io/github/Altamir)
+	- Integração com  [Coveralls.io](https://coveralls.io/github/Altamir/elixir-reservas-de-voo)
  
   
   
